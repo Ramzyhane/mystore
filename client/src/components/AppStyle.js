@@ -2,6 +2,25 @@ import {StyleSheet} from 'react-native';
 import AppColors from './AppColors';
 
 export default StyleSheet.create({
+    header:{
+        paddingVertical: 20,
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginHorizontal: 20,
+    },
+    cartCard:{
+        height: 100,
+        elevation: 15,
+        borderRadius: 10,
+        backgroundColor: AppColors.white,
+        marginVertical: 10,
+        marginHorizontal:20,
+        paddingHorizontal: 10,
+        flexDirection: 'row',
+        alignItems: 'center',
+
+    },
+    
     title:{
         color:AppColors.purple,
         fontSize:24,
@@ -13,13 +32,28 @@ export default StyleSheet.create({
         padding:30,
         alignItems: 'center',
         justifyContent: "center",
-        backgroundColor: AppColors.gray_10
+        backgroundColor: AppColors.g
+    },
+    container12:{
+        flex:1,
+        padding:15,
+        alignItems: 'center',
+        justifyContent: "center",
+        backgroundColor: AppColors.red
+
+    },
+    mag:{
+        width: 95,
+        height: 50,
+        alignSelf: 'flex-start',
+
     },
     btn:{
         width:'100%', backgroundColor:AppColors.yellow,
         height:50, borderRadius:30, alignItems:'center', justifyContent:'center',
         shadowColor:AppColors.pink, shadowOffset:{width:2, height:2},
-        shadowOpacity:0.40, shadowRadius:7, elevation:4
+        shadowOpacity:0.40, shadowRadius:7, elevation:4,
+        
     },
     btn_text:{
         color:AppColors.gray_90,
@@ -48,6 +82,7 @@ export default StyleSheet.create({
         textAlign:'center'
 
     },
+
     input:{
         width:'100%',
         height:60,
@@ -67,8 +102,55 @@ export default StyleSheet.create({
         fontSize:16,
         color:AppColors.white
 
-    }
-        
+    },
+    pricell:{
+        fontSize:19,
+        fontWeight:"bold",
+        color:AppColors.green
+    
+    },
+    image: {
+        width:200,
+        height:200,
+        marginRight:10,
+       backgroundColor:AppColors.width
+      },
+      details:{
+        fontSize:16,
+      },
+      name:{
+        fontSize:18,
+        fontWeight:"bold",
+        backgroundColor:AppColors.yellow
 
+
+      },
+      detailsContainer:{
+        flex: 1,
+      },
+      tmcontainer:{
+        flexDirection:"row",
+        marginBottom:10,
+        padding:10,
+        backgroundColor:AppColors.white,
+      },
+      button:{
+        backgroundColor: AppColors.black,
+        padding: 10,
+        borderRadius: 5,
+        marginVertical: 10,
+      },
+      buttonText: {
+        color: AppColors.blue,
+        textAlign: 'center',
+        fontSize: 16,
+      },
+    header1:{width:'100%', height:'10%',backgroundColor:AppColors.yellow},
+    list:{width:'100%', height:'80%'},
+    input1:{width:'100%', height:'10%',backgroundColor:AppColors.white,padding:10},
+    inputText:{width:'100%', height:40,backgroundColor:AppColors.white,fontSize:22,paddingHorizontal:10}
+    
+        
+    
     
 })

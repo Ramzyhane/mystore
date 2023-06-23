@@ -13,6 +13,8 @@ export default {
     green: '#10d5a6',
     purple: '#b00269',
     pink: '#ff007c',
-    yellow_crown: '#ffdf40'
+    yellow_crown: '#ffdf40',
+    g: '#ccff33',
+    Olive: '#808000'
     
 }

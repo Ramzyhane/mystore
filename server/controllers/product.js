@@ -5,6 +5,50 @@ import bcryptjs from 'bcryptjs'
 import Student from '../models/student.js';
 
 import Account from '../models/account.js';
+import Std from '../models/student.js';
+
+
+router.post('/create', async(req,res) => {
+   const newcar =req.body.student;
+   const id =new mongoose.Types.ObjectId();
+   const _student = new Std({
+    _id:id,
+    FName: newcar.FName,
+    LName: newcar.LName,
+    price: newcar.price,
+    image: newcar.image
+
+   })
+   _student.save()
+   .then(st_creat => {
+    return res.status(200).json({
+        msg:st_creat
+    })
+   })
+   .catch(error => {
+    return res.status(500).json({
+        msg: error.message
+    })   
+  })
+})
+
+router.get('/getStudent', (req,res) => {
+    Student.find()
+    .then(studens=>{
+        return res.status(200).json({
+            msg: studens
+        })
+    })
+    .catch(error => {
+        return res.status(500).json({
+            msg: error.message
+        })   
+      })
+  
+})
+
+
+
 
 
 router.post('/creatNewAccount', async(req,res) =>{

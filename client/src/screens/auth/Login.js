@@ -32,7 +32,7 @@ const Login = props =>{
 
     const signupAction = async() => {
         if(email !=="" && password !=="" && firstName !=="" && lastName !==""){
-            const api = "http://10.0.0.10:3001/api/products/creatNewAccount";
+            const api = "http://10.0.0.20:3001/api/products/creatNewAccount";
             try {
                 const fbuser = await createUserWithEmailAndPassword(auth, email, password);
                
