@@ -12,6 +12,7 @@ export default function Cars(props) {
       .then(result => {
         setStudents(result.data.msg)
         console.log(result.data.msg);
+        console.log("hamza")
       })
       .catch(error => {
         Alert.alert('GetloadStudents1 student', error.message)
