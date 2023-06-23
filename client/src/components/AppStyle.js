@@ -39,7 +39,6 @@ export default StyleSheet.create({
         padding:15,
         alignItems: 'center',
         justifyContent: "center",
-        backgroundColor: AppColors.red
 
     },
     mag:{
@@ -103,6 +102,10 @@ export default StyleSheet.create({
         color:AppColors.white
 
     },
+    price:{  
+        fontSize:19,
+        fontWeight:"bold",
+        color:AppColors.green},
     pricell:{
         fontSize:19,
         fontWeight:"bold",
@@ -110,10 +113,11 @@ export default StyleSheet.create({
     
     },
     image: {
-        width:200,
-        height:200,
-        marginRight:10,
-       backgroundColor:AppColors.width
+        width: 120,
+        height: 120,
+        borderTopLeftRadius: 10,
+        borderBottomLeftRadius: 10,
+        resizeMode: 'stretch',
       },
       details:{
         fontSize:16,

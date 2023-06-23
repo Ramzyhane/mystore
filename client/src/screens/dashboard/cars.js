@@ -12,34 +12,31 @@ export default function Cars(props) {
       .then(result => {
         setStudents(result.data.msg)
         console.log(result.data.msg);
-        console.log("hamza")
       })
       .catch(error => {
         Alert.alert('GetloadStudents1 student', error.message)
       })
   }
 
-  useEffect(() => {
+  useEffect(() =>{
     loadStudents();
-  }, [])
+  },[])
 
   return (
-    <View>
-      {students.length > 0 &&
-        students.map((item) => (
-          <View style={AppStyle.container} key={item._id}>
-            <TouchableOpacity style={AppStyle.container12} onPress={() => { props.navigation.navigate("One_car", { item }) }}>
-              <View style={AppStyle.tmcontainer}>
-                <Image source={{ uri: item.image }} style={AppStyle.image} />
-                <View style={AppStyle.detailsContainer}>
-                  <Text style={AppStyle.name}>Name: {item.FName}</Text>
-                  <Text style={AppStyle.details}>{item.Details}</Text>
-                  <Text style={AppStyle.pricell}>Price: {item.price}</Text>
-                </View>
+    <View style={AppStyle.container}>
+      <TouchableOpacity style={AppStyle.container12} onPress={() => {props.navigation.navigate("One_car", { item: props })}}>
+        {students.length > 0 &&
+          students.map((item) => (
+            <View style={AppStyle.tmcontainer} key={item._id}>
+              <View style={AppStyle.detailsContainer}>
+                <Text style={AppStyle.name}>Name: {item.FName}</Text>
+                <Text style={AppStyle.details}>{item.Details}</Text>
+                <Text style={AppStyle.pricell}>Price: {item.price}</Text>
               </View>
-            </TouchableOpacity>
-          </View>
-        ))}
+              <Image source={{ uri: item.image }} style={AppStyle.image} />
+            </View>
+          ))}
+      </TouchableOpacity>
     </View>
   );
 }

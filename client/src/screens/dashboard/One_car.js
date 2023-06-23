@@ -1,32 +1,30 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, Image,Alert ,TouchableOpacity} from 'react-native';
+import { View, Text, Image, ScrollView } from 'react-native';
 import AppStyle from "../../components/AppStyle";
-
 
 const Sho = (props) => {
   const [students, setStudents] = useState([]);
 
   return (
-    
-    <View style={AppStyle.container}>
-      
-          <View style={AppStyle.tmcontainer} key={item._id}>
-            <Image source={{ uri: item.Image }} style={AppStyle.image} />
-            <View style={AppStyle.detailsContainer}>
-              <Text style={AppStyle.name}>Name: {item.FName}</Text>
-              <Text style={AppStyle.details}>{item.Details}</Text>
-              <Text style={AppStyle.pricell}>Price: {item.price}</Text>
-            </View>
+    <ScrollView>
+      <View style={AppStyle.container}>
+        <View style={AppStyle.tmcontainer} key={props.item &&props.item._id}>
+          <View style={AppStyle.detailsContainer}>
+            <Text style={AppStyle.name}>Name: {props.item && props.item.FName}</Text>
+            <Text style={AppStyle.details}>{props.item && props.item.Details}</Text>
+            <Text style={AppStyle.pricell}>Price: {props.item && props.item.price}</Text>
           </View>
-        
-    </View>
+          <Image source={{ uri: props.item && props.item.image }} style={AppStyle.image} />
+        </View>
+      </View>
+    </ScrollView>
   );
 }
 
-export const screenOptio = (navData) => {
+export const screenOptions = (navData) => {
   return {
-      headerTitle: 'ons',
-    
+    headerTitle: 'ons',
   }
-} 
+}
+
 export default Sho;
