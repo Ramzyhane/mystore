@@ -11,7 +11,7 @@ const   Gr = (props) => {
 
   const createNemStudent = async () => {
     if (FName !== '' && LName !== '' && price !== '' && image !== '') {
-      const api_url = 'http://10.70.0.18:3001/api/create';
+      const api_url = 'http://10.0.0.8:3001/api/create';
       const student = {
         FName: FName,
         LName: LName,

@@ -7,7 +7,7 @@ import axios from "axios";
 export default function Tools(props) {
   const [students, setStudents] = useState([]);
   const loadStudents = async() =>{
-    const  api_url="http://10.0.0.20:3001/api/getStudent";
+    const  api_url="http://10.0.0.8:3001/api/getStudent";
     axios.get(api_url)
     .then(result => {
         setStudents(result.data.msg)

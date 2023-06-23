@@ -7,7 +7,7 @@ import axios from "axios";
 export default function grocery(props) {
   const [studentss, setStudentss] = useState([]);
   const loadStudents = async () => {
-    const api_ur = "http://10.0.0.20:3001/api/getStudent";
+    const api_ur = "http://10.0.0.8:3001/api/getStudent";
     axios.get(api_ur)
       .then(result => {
         setStudentss(result.data.msg)
