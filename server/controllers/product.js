@@ -3,7 +3,9 @@ const router = express.Router();
 import mongoose from "mongoose";
 import bcryptjs from 'bcryptjs'
 import Student from '../models/student.js';
-
+import favorites from "../models/favorites.js";
+import shoping from "../models/shoping.js";
+////
 import Account from '../models/account.js';
 import Std from '../models/student.js';
 
@@ -46,6 +48,105 @@ router.get('/getStudent', (req,res) => {
       })
   
 })
+
+router.post('/addtoshopping', async (req, res) => {
+    const sh = req.body.shopping;
+
+    const shopping = new shoping({
+        ShopId: sh.ShopId
+    })
+    shopping.save()
+    .then(shopping_saved =>{
+        return res.status(200).json({
+            msg: shopping_saved
+            
+        })
+    })
+    .catch(er =>{
+        console.log(er.message);
+    })
+  
+
+  })
+
+
+router.post('/addtofavorite', async (req, res) => {
+    const fav = req.body.favorite;
+
+    const favorite = new favorites({
+        GadetId: fav.GadetId
+    })
+    favorite.save()
+    .then(favorites_saved =>{
+        return res.status(200).json({
+            msg: favorites_saved
+            
+        })
+    })
+    .catch(er =>{
+        console.log(er.message);
+    })
+  
+
+  })
+  
+  router.get('/loadShopping', async (req, res) => {
+    try {
+      const Shopping = await shoping.find();
+      const gadgetIds = Shopping.map(sh => sh.ShopId);
+      const shop = await Student.find({ _id: gadgetIds });
+      console.log(gadgetIds);
+      return res.status(200).json({
+        msg: Shopping
+      });
+    } catch (err) {
+      return res.status(500).json({
+        msg: err.message
+      });
+    }
+  });
+  
+
+
+
+  router.get('/loadfavorites', async (req, res) => {
+    try {
+      const Favorites = await favorites.find();
+      const gadgetIds = Favorites.map(fav => fav.GadetId);
+      const gadgets = await Student.find({ _id: gadgetIds });
+      console.log(gadgetIds);
+      return res.status(200).json({
+        msg: gadgets
+      });
+    } catch (err) {
+      return res.status(500).json({
+        msg: err.message
+      });
+    }
+  });
+  
+  router.post('/deletefavorites' ,async (req,res) => {
+    try {
+        const fav = req.body.favorite_delete;
+        favorites.findOneAndDelete({GadetId: fav.GadetId})
+        .then(favorite_deleted =>{
+            return res.status(200).json({
+            message: favorite_deleted
+             })
+    
+        })
+        .catch(eror => {
+            return res.status(500).json({
+                message: eror.message
+            });
+        })
+    } catch (error) {
+        console.log(error)
+    }
+   
+
+  })
+  
 
 
 

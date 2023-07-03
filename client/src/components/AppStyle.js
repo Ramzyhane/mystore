@@ -28,12 +28,14 @@ export default StyleSheet.create({
 
     },
     container: {
-        flex:1,
-        padding:30,
+        flex: 1,
+        padding: 30,
         alignItems: 'center',
-        justifyContent: "center",
-        backgroundColor: AppColors.g
-    },
+        justifyContent: 'center',
+        backgroundColor: AppColors.g,
+        marginBottom: 5, 
+      },
+      
     container12:{
         flex:1,
         padding:15,
@@ -133,10 +135,21 @@ export default StyleSheet.create({
         flex: 1,
       },
       tmcontainer:{
-        flexDirection:"row",
-        marginBottom:10,
-        padding:10,
-        backgroundColor:AppColors.white,
+        paddingHorizontal: 30,
+        position: 'relative',
+        marginBottom: 20,
+        borderRadius: 10,
+        backgroundColor: AppColors.blue,
+        borderWidth: 2,
+        borderColor: AppColors.black,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height:1},
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
+        elevation: 3,
+        justifyContent: 'space-between',
+        marginBottom: 10, 
+
       },
       button:{
         backgroundColor: AppColors.black,
@@ -148,6 +161,28 @@ export default StyleSheet.create({
         color: AppColors.blue,
         textAlign: 'center',
         fontSize: 16,
+      },
+      shoppingiteButton:{
+        position: 'absolute',
+        top: -100,
+        right: -40,
+        backgroundColor: 'transparent',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 60,
+        height: 60,
+        justifyContent: 'flex-start'
+      },
+      favoriteButton1: {
+        position: 'absolute',
+        top: -40,
+        right: -30,
+        backgroundColor: 'transparent',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 40,
+        height: 40,
+        justifyContent: 'flex-start'
       },
     header1:{width:'100%', height:'10%',backgroundColor:AppColors.yellow},
     list:{width:'100%', height:'80%'},
