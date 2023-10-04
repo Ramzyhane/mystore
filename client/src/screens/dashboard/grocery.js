@@ -33,7 +33,7 @@ export default function grocery(props) {
 
   const AddtoFavorite = (_id) => {
     console.log('Favorite:', _id);
-    const Api_Url= "http://10.0.0.8:3001/api/addtofavorite";
+    const Api_Url= "http:// 10.0.0.19:3001/api/addtofavorite";
     const favorite = {
       GadetId: _id
     }
